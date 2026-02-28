@@ -8,7 +8,7 @@ def engineer_features(df):
     # 1. Tenure groups (customer lifecycle stage)
     df["tenure_group"] = pd.cut(
         df["tenure"],
-        bins=[0, 12, 24, 48, 60, np.inf],
+        bins=[-1, 12, 24, 48, 60, 9999],
         labels=[0, 1, 2, 3, 4]
     ).astype(int)
 
