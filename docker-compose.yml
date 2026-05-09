@@ -27,5 +27,11 @@ services:
     image: grafana/grafana
     ports:
       - "3000:3000"
+    volumes:
+      - ./monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./monitoring/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/dashboard.json:/var/lib/grafana/dashboards/dashboard.json
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
       - prometheus
