@@ -57,9 +57,9 @@ if __name__ == "__main__":
 
     new_cols = ["tenure_group", "avg_monthly_charges", "has_premium_support",
                 "service_count", "is_new_customer", "charge_per_service", "is_high_spender"]
-    print(f"\nNew features:")
+    print("\nNew features:")
     for col in new_cols:
         print(f"  {col}: min={df[col].min():.2f}, max={df[col].max():.2f}, mean={df[col].mean():.2f}")
 
     df.to_csv("data/processed/telco_featured.csv", index=False)
-    print(f"\nSaved to data/processed/telco_featured.csv")
+    print("\nSaved to data/processed/telco_featured.csv")
